@@ -1,8 +1,8 @@
 package main
 
 import (
-	"log"
 	"net/http"
+	"os"
 	"os/exec"
 
 	d "./backend/dependencies"
@@ -15,7 +15,6 @@ func main() {
 	cmnd.Start()
 	err := http.ListenAndServe(":3000", nil)
 	if err != nil {
-		log.Fatal("ListenAndServe: ", err)
-		return
+		os.Exit(3)
 	}
 }
