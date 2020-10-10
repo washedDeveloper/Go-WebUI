@@ -1,12 +1,12 @@
-const socket = new WebSocket("ws://localhost:1234");
+const socket = new WebSocket("ws://localhost:3000/ws");
 
 socket.onopen = function(e) {
    alert("Socket connection established.");
+   socket.send("Pong");
 };
 
 socket.onmessage = function(event) {
     console.log(`Data received from server: ${event.data}`);
-    socket.send("Pong");
 };
 
 socket.onclose = function(e) {
