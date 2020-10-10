@@ -1,7 +1,7 @@
 const socket = new WebSocket("ws://localhost:3000/ws");
 
 socket.onopen = function(e) {
-   alert("Socket connection established.");
+   console.log("Socket connection established.");
    socket.send("Pong");
 };
 
